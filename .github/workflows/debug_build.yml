@@ -16,7 +16,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        package_variant: [ apt-android-7 ]
+        package_variant: [ nix-android-8 ]
 
     steps:
       - name: Clone repository

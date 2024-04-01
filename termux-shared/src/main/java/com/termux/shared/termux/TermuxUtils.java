@@ -528,46 +528,6 @@ public class TermuxUtils {
     }
 
     /**
-     * Get a markdown {@link String} for APT info of the app.
-     *
-     * This will take a few seconds to run due to running {@code apt update} command.
-     *
-     * @param context The context for operations.
-     * @return Returns the markdown {@link String}.
-     */
-    public static String geAPTInfoMarkdownString(@NonNull final Context context) {
-        String aptInfoScript;
-        InputStream inputStream = context.getResources().openRawResource(com.termux.shared.R.raw.apt_info_script);
-        try {
-            aptInfoScript = IOUtils.toString(inputStream, Charset.defaultCharset());
-        } catch (IOException e) {
-            Logger.logError(LOG_TAG, "Failed to get APT info script: " + e.getMessage());
-            return null;
-        }
-        IOUtils.closeQuietly(inputStream);
-        if (aptInfoScript == null || aptInfoScript.isEmpty()) {
-            Logger.logError(LOG_TAG, "The APT info script is null or empty");
-            return null;
-        }
-        aptInfoScript = aptInfoScript.replaceAll(Pattern.quote("@TERMUX_PREFIX@"), TermuxConstants.TERMUX_PREFIX_DIR_PATH);
-        ExecutionCommand executionCommand = new ExecutionCommand(-1, TermuxConstants.TERMUX_BIN_PREFIX_DIR_PATH + "/bash", null, aptInfoScript, null, ExecutionCommand.Runner.APP_SHELL.getName(), false);
-        executionCommand.commandLabel = "APT Info Command";
-        executionCommand.backgroundCustomLogLevel = Logger.LOG_LEVEL_OFF;
-        AppShell appShell = AppShell.execute(context, executionCommand, null, new TermuxShellEnvironment(), null, true);
-        if (appShell == null || !executionCommand.isSuccessful() || executionCommand.resultData.exitCode != 0) {
-            Logger.logErrorExtended(LOG_TAG, executionCommand.toString());
-            return null;
-        }
-        if (!executionCommand.resultData.stderr.toString().isEmpty())
-            Logger.logErrorExtended(LOG_TAG, executionCommand.toString());
-        StringBuilder markdownString = new StringBuilder();
-        markdownString.append("## ").append(TermuxConstants.TERMUX_APP_NAME).append(" APT Info\n\n");
-        markdownString.append(executionCommand.resultData.stdout.toString());
-        markdownString.append("\n##\n");
-        return markdownString.toString();
-    }
-
-    /**
      * Get a markdown {@link String} for info for termux debugging.
      *
      * @param context The context for operations.

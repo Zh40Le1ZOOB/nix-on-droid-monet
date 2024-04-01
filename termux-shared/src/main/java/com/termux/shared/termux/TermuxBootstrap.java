@@ -82,65 +82,16 @@ public class TermuxBootstrap {
     }
 
     /**
-     * Is {@link PackageManager#APT} set as {@link #TERMUX_APP_PACKAGE_MANAGER}.
-     */
-    public static boolean isAppPackageManagerAPT() {
-        return PackageManager.APT.equals(TERMUX_APP_PACKAGE_MANAGER);
-    }
-
-    ///** Is {@link PackageManager#TAPM} set as {@link #TERMUX_APP_PACKAGE_MANAGER}. */
-    //public static boolean isAppPackageManagerTAPM() {
-    //    return PackageManager.TAPM.equals(TERMUX_APP_PACKAGE_MANAGER);
-    //}
-    ///** Is {@link PackageManager#PACMAN} set as {@link #TERMUX_APP_PACKAGE_MANAGER}. */
-    //public static boolean isAppPackageManagerPACMAN() {
-    //    return PackageManager.PACMAN.equals(TERMUX_APP_PACKAGE_MANAGER);
-    //}
-    /**
-     * Is {@link PackageVariant#APT_ANDROID_7} set as {@link #TERMUX_APP_PACKAGE_VARIANT}.
-     */
-    public static boolean isAppPackageVariantAPTAndroid7() {
-        return PackageVariant.APT_ANDROID_7.equals(TERMUX_APP_PACKAGE_VARIANT);
-    }
-
-    /**
-     * Is {@link PackageVariant#APT_ANDROID_5} set as {@link #TERMUX_APP_PACKAGE_VARIANT}.
-     */
-    public static boolean isAppPackageVariantAPTAndroid5() {
-        return PackageVariant.APT_ANDROID_5.equals(TERMUX_APP_PACKAGE_VARIANT);
-    }
-
-    ///** Is {@link PackageVariant#TAPM_ANDROID_7} set as {@link #TERMUX_APP_PACKAGE_VARIANT}. */
-    //public static boolean isAppPackageVariantTAPMAndroid7() {
-    //    return PackageVariant.TAPM_ANDROID_7.equals(TERMUX_APP_PACKAGE_VARIANT);
-    //}
-    ///** Is {@link PackageVariant#PACMAN_ANDROID_7} set as {@link #TERMUX_APP_PACKAGE_VARIANT}. */
-    //public static boolean isAppPackageVariantTPACMANAndroid7() {
-    //    return PackageVariant.PACMAN_ANDROID_7.equals(TERMUX_APP_PACKAGE_VARIANT);
-    //}
-    /**
      * Termux package manager.
      */
     public enum PackageManager {
 
         /**
-         * Advanced Package Tool (APT) for managing debian deb package files.
-         * https://wiki.debian.org/Apt
-         * https://wiki.debian.org/deb
+         * Nix is a tool that takes a unique approach to package management and system configuration.
+         * https://wiki.nixos.org/wiki/Nix
          */
-        APT("apt");
+        NIX("nix");
 
-        ///**
-        // * Termux Android Package Manager (TAPM) for managing termux apk package files.
-        // * https://en.wikipedia.org/wiki/Apk_(file_format)
-        // */
-        //TAPM("tapm");
-        ///**
-        // * Package Manager (PACMAN) for managing arch linux pkg.tar package files.
-        // * https://wiki.archlinux.org/title/pacman
-        // * https://en.wikipedia.org/wiki/Arch_Linux#Pacman
-        // */
-        //PACMAN("pacman");
         private final String name;
 
         PackageManager(final String name) {
@@ -149,10 +100,6 @@ public class TermuxBootstrap {
 
         public String getName() {
             return name;
-        }
-
-        public boolean equalsManager(String manager) {
-            return manager != null && manager.equals(this.name);
         }
 
         /**
@@ -177,18 +124,10 @@ public class TermuxBootstrap {
     public enum PackageVariant {
 
         /**
-         * {@link PackageManager#APT} variant for Android 7+.
+         * {@link PackageManager#NIX} variant for Android 8+.
          */
-        APT_ANDROID_7("apt-android-7"),
-        /**
-         * {@link PackageManager#APT} variant for Android 5+.
-         */
-        APT_ANDROID_5("apt-android-5");
+        NIX_ANDROID_8("nix-android-8");
 
-        ///** {@link PackageManager#TAPM} variant for Android 7+. */
-        //TAPM_ANDROID_7("tapm-android-7");
-        ///** {@link PackageManager#PACMAN} variant for Android 7+. */
-        //PACMAN_ANDROID_7("pacman-android-7");
         private final String name;
 
         PackageVariant(final String name) {
@@ -197,10 +136,6 @@ public class TermuxBootstrap {
 
         public String getName() {
             return name;
-        }
-
-        public boolean equalsVariant(String variant) {
-            return variant != null && variant.equals(this.name);
         }
 
         /**
