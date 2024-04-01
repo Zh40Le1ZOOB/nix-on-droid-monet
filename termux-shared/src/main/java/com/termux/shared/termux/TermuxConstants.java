@@ -330,7 +330,7 @@ public final class TermuxConstants {
      * Termux GitHub organization name
      */
     // Default: "termux"
-    public static final String TERMUX_GITHUB_ORGANIZATION_NAME = "termux";
+    public static final String TERMUX_GITHUB_ORGANIZATION_NAME = "t184256";
 
     /**
      * Termux GitHub organization url
@@ -351,13 +351,13 @@ public final class TermuxConstants {
      * Termux app name
      */
     // Default: "Termux"
-    public static final String TERMUX_APP_NAME = "Termux";
+    public static final String TERMUX_APP_NAME = "Nix";
 
     /**
      * Termux package name
      */
     // Default: "com.termux"
-    public static final String TERMUX_PACKAGE_NAME = "com.termux";
+    public static final String TERMUX_PACKAGE_NAME = "com.termux.nix";
 
     /**
      * Termux GitHub repo name
@@ -715,7 +715,7 @@ public final class TermuxConstants {
      * Termux Site url
      */
     // Default: "https://termux.dev"
-    public static final String TERMUX_SITE_URL = "https://termux.dev";
+    public static final String TERMUX_SITE_URL = "https://github.com/t184256/nix-on-droid";
 
     /**
      * Termux Wiki
@@ -727,7 +727,7 @@ public final class TermuxConstants {
      * Termux Wiki url
      */
     // Default: "https://wiki.termux.com"
-    public static final String TERMUX_WIKI_URL = "https://wiki.termux.com";
+    public static final String TERMUX_WIKI_URL = "https://github.com/t184256/nix-on-droid/wiki";
 
     /**
      * Termux GitHub wiki repo url
@@ -745,7 +745,7 @@ public final class TermuxConstants {
      * Termux support email url
      */
     // Default: "support@termux.dev"
-    public static final String TERMUX_SUPPORT_EMAIL_URL = "support@termux.dev";
+    public static final String TERMUX_SUPPORT_EMAIL_URL = "nix-on-droid@unboiled.info";
 
     /**
      * Termux support email mailto url
