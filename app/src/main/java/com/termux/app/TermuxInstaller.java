@@ -112,10 +112,10 @@ final class TermuxInstaller {
         taskEditText.setText(defaultBootstrapURL);
 
         AlertDialog dialog = new AlertDialog.Builder(activity)
-            .setTitle("Bootstrap zipball location")
-            .setMessage("Enter the URL of a directory containing bootstrap-" + archName + ".zip")
+            .setTitle(activity.getString(R.string.bootstrap_select_title))
+            .setMessage(activity.getString(R.string.bootstrap_select_body, "bootstrap-" + archName + ".zip"))
             .setView(taskEditText)
-            .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            .setPositiveButton(activity.getString(R.string.bootstrap_select_ok), new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     String bootstrapURL = String.valueOf(taskEditText.getText());

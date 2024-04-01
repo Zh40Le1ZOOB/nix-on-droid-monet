@@ -26,6 +26,9 @@
 
 
     <!-- Termux Bootstrap Packages Installation -->
+    <string name="bootstrap_select_title">Bootstrap zipball location</string>
+    <string name="bootstrap_select_body">Enter the URL of a directory containing %1$s</string>
+    <string name="bootstrap_select_ok">OK</string>
     <string name="bootstrap_installer_body">Installing bootstrap packages…</string>
     <string name="bootstrap_error_title">Unable to install bootstrap</string>
     <string name="bootstrap_error_body">&TERMUX_APP_NAME; was unable to install the bootstrap packages.</string>

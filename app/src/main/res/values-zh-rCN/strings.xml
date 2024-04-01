@@ -16,6 +16,9 @@
     <string name="permission_run_command_label">在&TERMUX_APP_NAME; 环境中运行命令</string>
     <string name="permission_run_command_description">在 &TERMUX_APP_NAME; 环境中运行任意命令</string>
     <!-- Termux Bootstrap Packages Installation -->
+    <string name="bootstrap_select_title">引导程序（bootstrap）包位置</string>
+    <string name="bootstrap_select_body">输入包含 %1$s 的目录的 URL</string>
+    <string name="bootstrap_select_ok">确定</string>
     <string name="bootstrap_installer_body">正在安装引导程序（bootstrap）包…</string>
     <string name="bootstrap_error_title">无法安装引导程序（bootstrap）包</string>
     <string name="bootstrap_error_body">&TERMUX_APP_NAME; 无法安装引导程序（bootstrap）包。</string>
